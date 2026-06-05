@@ -7,53 +7,53 @@ from faker import Faker
 fake = Faker()
 num_records = 200
 
-# tenant = r"Multi_Tenant_Event_Analytics_System\tenant_data.csv"
+tenant = r"Multi_Tenant_Event_Analytics_System\tenant_data.csv"
 
-# with open(tenant, mode='w', newline='', encoding='utf-8') as file:
-#     writer = csv.writer(file)
-#     writer.writerow(["tenant_id", "tenant_name", "tenant_status"])
+with open(tenant, mode='w', newline='', encoding='utf-8') as file:
+    writer = csv.writer(file)
+    writer.writerow(["tenant_id", "tenant_name", "tenant_status"])
     
-#     for i in range(1, num_records + 1):
-#         writer.writerow([
-#             f"TNT-{i:04d}",                      
-#             f"{fake.company()} ", 
-#             random.choice(["Active", "Inactive", "Suspended"]) 
-#         ])
+    for i in range(1, num_records + 1):
+        writer.writerow([
+            f"TNT-{i:04d}",                      
+            f"{fake.company()} ", 
+            random.choice(["Active", "Inactive", "Suspended"]) 
+        ])
         
-# user = r"Multi_Tenant_Event_Analytics_System\user_data.csv"
+user = r"Multi_Tenant_Event_Analytics_System\user_data.csv"
 
-# with open(user, mode='w', newline='', encoding='utf-8') as file:
-#     writer = csv.writer(file)
-#     writer.writerow(["user_id", "user_name", "user_email","user_phone_number","created_at","tenant_id","user_address"])
+with open(user, mode='w', newline='', encoding='utf-8') as file:
+    writer = csv.writer(file)
+    writer.writerow(["user_id", "user_name", "user_email","user_phone_number","created_at","tenant_id","user_address"])
     
-#     for i in range(1, num_records + 1):
+    for i in range(1, num_records + 1):
         
-#         user_id = f"USR-{i:05d}"
-#         user_name = fake.name()
-#         user_email = fake.unique.email()
-#         user_phone_number = random.randint(6000000000, 9999999999)
-#         random_days = random.randint(0, 30)
-#         random_hours = random.randint(0, 23)
-#         created_date = datetime.now() - timedelta(days=random_days, hours=random_hours)
-#         created_at = created_date.strftime("%Y-%m-%d %H:%M:%S")
-#         random_tenant_num = random.randint(1, 200)
-#         tenant_id = f"TNT-{random_tenant_num:04d}"
-#         address_dict = {
-#             "street": fake.street_address(),
-#             "city": fake.city(),
-#             "state": fake.state_abbr(),
-#             "zipcode": fake.zipcode()
-#         }
-#         user_address = json.dumps(address_dict) 
-#         writer.writerow([
-#             user_id, 
-#             user_name, 
-#             user_email, 
-#             user_phone_number, 
-#             created_at, 
-#             tenant_id, 
-#             user_address
-#         ])
+        user_id = f"USR-{i:05d}"
+        user_name = fake.name()
+        user_email = fake.unique.email()
+        user_phone_number = random.randint(6000000000, 9999999999)
+        random_days = random.randint(0, 30)
+        random_hours = random.randint(0, 23)
+        created_date = datetime.now() - timedelta(days=random_days, hours=random_hours)
+        created_at = created_date.strftime("%Y-%m-%d %H:%M:%S")
+        random_tenant_num = random.randint(1, 200)
+        tenant_id = f"TNT-{random_tenant_num:04d}"
+        address_dict = {
+            "street": fake.street_address(),
+            "city": fake.city(),
+            "state": fake.state_abbr(),
+            "zipcode": fake.zipcode()
+        }
+        user_address = json.dumps(address_dict) 
+        writer.writerow([
+            user_id, 
+            user_name, 
+            user_email, 
+            user_phone_number, 
+            created_at, 
+            tenant_id, 
+            user_address
+        ])
         
 events = r"Multi_Tenant_Event_Analytics_System\event_data.csv"
 
