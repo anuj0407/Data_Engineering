@@ -20,7 +20,7 @@ title VARCHAR(100) NOT NULL,
 );
 
 CREATE TABLE enrollments(
-enrollment_id VARCHAR(10) NOT NULL PRIMARY KEY CHECK(enrollment_id ~ '^	ERL-[0-9]{4}$'),
+enrollment_id VARCHAR(10) NOT NULL PRIMARY KEY CHECK(enrollment_id ~ '^ERL-[0-9]{4}$'),
 user_id VARCHAR(10) NOT NULL REFERENCES users(user_id),
 course_id VARCHAR(10) NOT NULL REFERENCES courses(course_id),
 enrollment_date TIMESTAMP NOT NULL
