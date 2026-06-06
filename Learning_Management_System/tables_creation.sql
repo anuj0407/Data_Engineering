@@ -43,6 +43,7 @@ CREATE TABLE assessment_submissions(
 submission_id VARCHAR(10) NOT NULL PRIMARY KEY CHECK(submission_id ~ '^SUB-[0-9]{4}$'),
 assessment_id VARCHAR(10) NOT NULL REFERENCES assessments(assessment_id),
 user_id VARCHAR(10) NOT NULL REFERENCES users(user_id),
+score_obtained INT NOT NULL CHECK(score_obtained > 0),
 submission_date DATE NOT NULL
 );
 
