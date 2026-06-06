@@ -147,7 +147,7 @@ with open(assessment_file_path,"w",newline="", encoding="utf-8") as f:
 
 # assessment submission file generation
 submission_file_path = r"Learning_Management_System\assessments_submission_data.csv"
-headers = ["submission_id","assessment_id","user_id","submission_date"]
+headers = ["submission_id","assessment_id","user_id","score_obtained","submission_date"]
 
 with open(submission_file_path,"w",newline="", encoding="utf-8") as f:
     write = csv.writer(f)
@@ -164,12 +164,14 @@ with open(submission_file_path,"w",newline="", encoding="utf-8") as f:
         user_id = f"USR-{user_num:04d}"
         date_obj = fake_obj.date_time_between(start_date=start_window, end_date=end_window)
         submission_date = date_obj.strftime("%Y-%m-%d")
+        score_obtained = random.randint(0,100)
 
         write.writerow([
             submission_id,
             assessment_id,
             user_id,
-            submission_date
+            submission_date,
+            score_obtained
         ])
 
 print("File generated successfully")
