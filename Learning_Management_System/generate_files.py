@@ -170,8 +170,8 @@ with open(submission_file_path,"w",newline="", encoding="utf-8") as f:
             submission_id,
             assessment_id,
             user_id,
-            submission_date,
-            score_obtained
+            score_obtained,
+            submission_date
         ])
 
 print("File generated successfully")
