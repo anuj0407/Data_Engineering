@@ -3,3 +3,4 @@
 - PostgreSQL
 - SQL Alchemy
 - Pyspark
+- Machine Learning
